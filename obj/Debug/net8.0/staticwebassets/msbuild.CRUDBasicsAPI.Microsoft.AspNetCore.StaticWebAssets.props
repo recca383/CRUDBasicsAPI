@@ -1,22 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRUDBasicsAPI.0vzrbn5kem.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRUDBasicsAPI.to9wd8rg8d.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>CRUDBasicsAPI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CRUDBasicsAPI</BasePath>
-      <RelativePath>CRUDBasicsAPI.0vzrbn5kem.bundle.scp.css</RelativePath>
+      <RelativePath>CRUDBasicsAPI.to9wd8rg8d.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>0vzrbn5kem</Fingerprint>
-      <Integrity>tBrfj4C3sPj7/TYBRCTTpQzKecQa5Ds0kYQpyH39u3M=</Integrity>
+      <Fingerprint>to9wd8rg8d</Fingerprint>
+      <Integrity>8wnAHbkyAbHN+jh9t6GMK+gbIK6Ly06SZ1GkgrGOvRg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRUDBasicsAPI.0vzrbn5kem.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRUDBasicsAPI.to9wd8rg8d.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
       <SourceType>Package</SourceType>
