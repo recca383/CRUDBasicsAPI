@@ -7,7 +7,7 @@ namespace CRUDBasicsAPI.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public required int ID { get; set; }
+        public int ID { get; set; }
         public required string Name { get; set; }
         public string? Address { get; set; }
 

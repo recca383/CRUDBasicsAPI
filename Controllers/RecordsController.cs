@@ -1,16 +1,34 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CRUDBasicsAPI.Data;
+using CRUDBasicsAPI.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRUDBasicsAPI.Controllers
 {
     public class RecordsController : Controller
     {
-        // GET: RecordsController
-        public ActionResult Index()
+        public DatabaseContext _context { get; }
+        
+        public RecordsController(DatabaseContext context)
         {
-            return View();
+            _context = context;
         }
+        #region CRUD Methods
+        private IEnumerable<Patient> GetPatients()
+        {
+            return _context.Patients.AsEnumerable();
+        }
+        private Patient GetPatient(int id)
+        {
+            return _context.Patients.FirstOrDefault(p => p.ID == id)!;
+        }
+        #endregion
 
+        // GET: RecordsController
+        public IActionResult Index()
+        {
+            return View(GetPatients());
+        }
         // GET: RecordsController/Details/5
         public ActionResult Details(int id)
         {
@@ -30,6 +48,14 @@ namespace CRUDBasicsAPI.Controllers
         {
             try
             {
+                Patient created = new Patient()
+                {
+                    Name = collection["Name"]!,
+                    Address = collection["Address"]
+                };
+                _context.Patients.Add(created);
+                _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -62,7 +88,7 @@ namespace CRUDBasicsAPI.Controllers
         // GET: RecordsController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(GetPatient(id));
         }
 
         // POST: RecordsController/Delete/5
@@ -72,6 +98,9 @@ namespace CRUDBasicsAPI.Controllers
         {
             try
             {
+                Patient toremove = GetPatient(id);
+                _context.Patients.Remove(toremove);
+                _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch

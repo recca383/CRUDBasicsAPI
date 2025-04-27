@@ -1,3 +1,4 @@
+using CRUDBasicsAPI.Controllers;
 using CRUDBasicsAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ namespace CRUDBasicsAPI
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //builder.Services.AddScoped<RecordsController>();
             builder.Services.AddDbContext<DatabaseContext>(o =>
             {
                 o.UseNpgsql(
