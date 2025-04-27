@@ -67,7 +67,7 @@ namespace CRUDBasicsAPI.Controllers
         // GET: RecordsController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(GetPatient(id));
         }
 
         // POST: RecordsController/Edit/5
@@ -77,6 +77,15 @@ namespace CRUDBasicsAPI.Controllers
         {
             try
             {
+                Patient updated = new Patient()
+                {
+                    ID = id,
+                    Name = collection["Name"]!,
+                    Address = collection["Address"]
+                };
+
+                _context.Patients.Update(updated);
+                _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
